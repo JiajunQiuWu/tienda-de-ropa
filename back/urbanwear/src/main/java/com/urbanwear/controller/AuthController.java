@@ -30,7 +30,7 @@ public class AuthController {
         }
     
         if (passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
-            String token = jwtUtil.generateToken(existingUser.getEmail());
+            String token = jwtUtil.generateToken(existingUser);
             return ResponseEntity.ok(Collections.singletonMap("token", token));
         } else {
             return ResponseEntity.status(401).body("Invalid credentials");
