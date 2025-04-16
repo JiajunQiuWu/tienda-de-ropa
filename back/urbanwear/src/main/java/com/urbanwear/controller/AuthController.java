@@ -37,16 +37,14 @@ public class AuthController {
         }
     }
     
-    
-    
-        @PostMapping("/register")
-        public ResponseEntity<?> register(@RequestBody User user) {
-            if (userRepository.existsByEmail(user.getEmail())) {
-                return ResponseEntity.status(400).body("Email already in use");
-            }
-    
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            userRepository.save(user);
-            return ResponseEntity.status(201).body("User registered successfully");
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody User user) {
+        if (user.getRole() == null || user.getRole().isEmpty()) {
+            user.setRole("USER"); 
         }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
+        return ResponseEntity.ok("Usuario registrado correctamente");
+    }
+    
 }
