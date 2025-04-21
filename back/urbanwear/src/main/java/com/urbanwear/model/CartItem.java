@@ -7,15 +7,14 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String description;
-    private String category;
-    private String image;
-    private String brand;
-    private double price;
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private Product product;
 }

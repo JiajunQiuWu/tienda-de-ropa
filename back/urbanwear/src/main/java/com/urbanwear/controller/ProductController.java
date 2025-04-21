@@ -1,23 +1,28 @@
 package com.urbanwear.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import com.urbanwear.model.Product;
 import com.urbanwear.service.ProductService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductController {
-    @Autowired
-    private ProductService productService;
+
+    @Autowired private ProductService productService;
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.findAll();
+    public List<Product> getAll() { return productService.findAll(); }
+
+    @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<?> createProduct(@RequestBody Product product) {
+        productService.save(product);
+        return ResponseEntity.ok("Producto creado con éxito");
     }
 }
