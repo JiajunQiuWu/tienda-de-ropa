@@ -23,12 +23,38 @@ Proyecto fullstack de tienda de ropa, desarrollado con:
               │   └── service
               └── resources
 /front
-  └── src
-      ├── assets
-      ├── components
-      ├── context
-      ├── pages
-      ├── routes
-      ├── services
-      ├── styles
-      └── App.jsx
+src/
+├── api/
+│   ├── auth.js
+│   └── products.js
+│
+├── assets/
+│   └── images/
+│
+├── components/
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── ProductCard.jsx
+│   └── ProtectedRoute.jsx
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── AdminDashboard.jsx
+│   ├── UserDashboard.jsx
+│   └── ProductForm.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── styles/
+│   ├── CreateProduct.css
+    └── main.css
+│
+├── App.jsx
+├── index.js
+└── config.js
