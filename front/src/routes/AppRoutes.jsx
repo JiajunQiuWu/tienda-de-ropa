@@ -1,28 +1,19 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import Home from '../pages/Home';
-import AdminDashboard from '../pages/AdminDashboard';
-import UserDashboard from '../pages/UserDashboard';
-import ProtectedRoute from '../components/ProtectedRoute';
+import AdminCreateProduct from '../pages/AdminCreateProduct';
 
-export default function AppRoutes() {
+const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/admin" element={
-        <ProtectedRoute allowedRole="ADMIN">
-          <AdminDashboard />
-        </ProtectedRoute>
-      } />
-      <Route path="/user" element={
-        <ProtectedRoute allowedRole="USER">
-          <UserDashboard />
-        </ProtectedRoute>
-      } />
+      <Route path="/admin" element={<AdminCreateProduct />} />
     </Routes>
   );
-}
+};
+
+export default AppRoutes;

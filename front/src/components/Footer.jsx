@@ -1,9 +1,9 @@
-import React from 'react';
-
-const Footer = () => (
-  <footer>
-    <p>Urbanwear &copy; 2025</p>
-  </footer>
-);
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p>&copy; 2025 Urbanwear. All rights reserved.</p>
+    </footer>
+  );
+};
 
 export default Footer;

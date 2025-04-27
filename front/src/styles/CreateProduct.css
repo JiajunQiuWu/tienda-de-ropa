@@ -1,0 +1,31 @@
+.create-product {
+    max-width: 500px;
+    margin: auto;
+    background-color: #0f1115;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .create-product form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-product input,
+  .create-product textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .create-product button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

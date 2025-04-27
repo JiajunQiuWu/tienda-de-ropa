@@ -1,17 +1,13 @@
 import React from 'react';
-import AppRoutes from './routes/AppRoutes';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import './styles/main.css';
+import AppRoutes from './routes/AppRoutes';
+import './styles/main.css'; 
 
 const App = () => (
-  <>
+  <div>
     <Header />
-    <main>
-      <AppRoutes />
-    </main>
-    <Footer />
-  </>
+    <AppRoutes />
+  </div>
 );
 
 export default App;
