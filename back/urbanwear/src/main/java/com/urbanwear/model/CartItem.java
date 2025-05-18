@@ -13,8 +13,10 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
-    private User user;
+    private Product product;
 
     @ManyToOne
-    private Product product;
+    private User user;
+
+    private int quantity;
 }

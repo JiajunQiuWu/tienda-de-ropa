@@ -9,8 +9,15 @@ import java.util.List;
 
 @Service
 public class ProductService {
-    @Autowired private ProductRepository productRepository;
-    public List<Product> findAll() { return productRepository.findAll(); }
-    public void save(Product product) { productRepository.save(product); }
-    public void delete(Long id) { productRepository.deleteById(id); }
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
+
+    public List<Product> findAll() {
+        return productRepository.findAll();
+    }
 }
